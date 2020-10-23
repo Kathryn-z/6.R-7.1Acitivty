@@ -6,8 +6,10 @@ let dy1=0;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  y0 = 0;
-  y1 = 0
+  x0 = random(width);
+  x1 = random(width);
+  y0 = random(50);
+  y1 = random(50);
 }
 
 
@@ -15,11 +17,11 @@ function draw() {
   background(200);
 
   y0+=dy0;
-  dy0==0.35;
+  dy0+=0.25;
   circle(x0,y0,50);
 
   y1+=dy1;
-  dy1==0.35;
+  dy1+=0.25;
   circle(x1,y1,50);
 
   if(y0>=height){
