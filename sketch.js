@@ -1,34 +1,37 @@
-let x0,y0;
-let dy0=0;
-
-let x1,y1;
-let dy1=0;
+let ball0;
+let ball1;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  x0 = random(width);
-  x1 = random(width);
-  y0 = random(50);
-  y1 = random(50);
+  ball0 = {
+    x:random(width),
+    y:random(50),
+    dy:0,
+  }
+
+  ball1 = {
+    x:random(width),
+    y:random(50),
+    dy:0,
+  }
 }
-
-
+  
 function draw() {
   background(200);
 
-  y0+=dy0;
-  dy0+=0.25;
-  circle(x0,y0,50);
+  ball0.y+=ball0.dy;
+  ball0.dy+=0.25;
+  circle(ball0.x,ball0.y,50);
 
-  y1+=dy1;
-  dy1+=0.25;
-  circle(x1,y1,50);
+  ball1.y+=ball1.dy;
+  ball1.dy+=0.25;
+  circle(ball1.x,ball1.y,50);
 
-  if(y0>=height){
-    dy0=-0.95*dy0;
+  if(ball0.y>=height){
+    ball0.y=-0.95*ball0.dy;
   }
 
-  if(y1>=height){
-    dy1=-0.95*dy1;
+  if(ball1.y>=height){
+    ball1.y=-0.95*ball1.dy;
   }
 }
