@@ -43,3 +43,4 @@ class Ball {
     // renders the object
   }
 }
+
